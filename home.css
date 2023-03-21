@@ -1,0 +1,573 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto;
+}
+.nested-grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+}
+.header{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    }
+
+/* styling for first nav bar */
+.nav1{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0rem 0.5rem rgba(255, 192, 203, 0.6);
+    width: 100%;
+    height: 70px;
+}
+label.logo a{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 40px;
+    padding: 4px 80px;
+}
+.nav1 ul{
+    float: right;
+    list-style: none;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+.nav1 li{
+    float: right;
+}
+.nav1 ul li a{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    margin: 0 5px;
+    text-align: center;
+    color: black;
+}
+.nav1 ul a:hover{
+    background: rgb(248, 219, 224);
+    transition: 0.5s;
+}
+
+/* styling for second nav bar */
+.nav2{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 221, 228);
+    border: 0.01rem solid;
+    border-color: rgb(150, 150, 150);
+    margin-top: 20px;
+    width: 100%;
+}
+.nav2 ul{
+    text-align: center;
+    list-style: none;
+}
+.nav2 ul li a{
+    padding: 0 30px;
+    font-size: 1.2rem;
+    color: black;
+}
+.nav2 ul li{
+    display: inline-block;
+    padding: 10px 0px;
+    color: black;
+}
+.nav2 a:hover{
+    color: rgb(190, 105, 117);
+    transition: 0.3s;
+}
+
+.img{
+    position: absolute;
+    width: 60px;
+}
+
+/* discount ribbon styling */
+.discount-ribbon{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    overflow: hidden;
+    z-index: 2;
+}
+.discount-ribbon::before{
+    content: "20%";
+    position: absolute;
+    width: 150%;
+    height: 45px;
+    background:red;
+    transform: rotate(-45deg) translateY(-35px) translateX(-35px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(236, 234, 234);
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 5px 10px rgba(20, 20, 20, 0.1);
+}
+
+/* Styling for the Side Bar */
+
+#menu{
+    font-size: 2rem;
+    color: red;
+}
+#logo-company{
+    height: 3.6rem;
+    width: 2.5rem;
+    position: relative;
+    left: 40px;
+}
+
+.sidebar-menu{
+    position: absolute;
+    height: 170vh;
+    width: 280px;
+    left: -280px;
+    background: lightcoral;
+    box-shadow:  0 0 6px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+.sidebar-menu .logo{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-shadow:0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-menu .logo a{
+    color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: 400;
+    position: absolute;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+}
+.sidebar-menu .menu{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+
+.sidebar-menu .menu li{
+    margin-top:5px;
+    padding: 1rem 1.2rem;
+}
+.sidebar-menu .menu li:hover{
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-menu .menu ion-icon{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.sidebar-menu .menu a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+#checkbox{
+    display: none;
+}
+
+.main-box .btn1 ion-icon{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    position: absolute;
+    z-index: 1;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+.main-box btn1 ion-icon:hover{
+    font: 2rem;
+}
+
+
+.sidebar-menu .btn2 ion-icon{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 15rem;
+    top: 1rem;
+    opacity: 0;
+    transition: all 0.4s linear;
+}
+#checkbox:checked ~.sidebar-menu{
+    left: 0;
+}
+
+#checkbox:checked ~.btn1 ion-icon{
+    opacity: 0;
+}
+
+#checkbox:checked ~.sidebar-menu .btn2 ion-icon{
+    opacity: 1;
+}
+
+/* styling for seach bar */
+.search-bar{
+    display: flex;
+    margin-top: 10px;
+    border:black; 
+    background-color: white;
+    border-width:1px; 
+    border-style:solid;
+}
+form input{
+    border: none;
+    outline: none;
+    padding-right: 20px;
+    font-size: 1rem;
+
+}
+form button{
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+/* styling for image slider */
+.image-slide{
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    overflow: hidden;
+}
+.images{
+    display: flex;
+    width: 50%;
+}
+.images img{
+    height: 300px;
+    width: 100%;
+    transition: all 0.15s ease;
+    margin-top: 50px;
+}
+.images input{
+    display: none;
+}
+.dots{
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+}
+.dots label{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: solid rgb(111, 111, 111) 2px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin: 5px;
+}
+.dots label:hover{
+    background-color: rgb(255, 207, 215);
+}
+#img1:checked ~ .pic1 {
+    margin-left: 0;
+}
+#img2:checked ~ .pic2 {
+    margin-left: -100%;
+}
+#img3:checked ~ .pic3 {
+    margin-left: -200%;
+}
+#img4:checked ~ .pic4 {
+    margin-left: -300%;
+}
+
+/* styling for flex container cards */
+.cards{
+    border: 0.4rem solid;
+    border-color: rgb(255, 212, 220);
+    max-width: 250px;
+    margin: 30px auto 30px auto;
+    background: rgb(252, 233, 237);
+}
+.cards:hover{
+    transform: scale(1.2);
+    background: rgb(255, 212, 220);
+}
+.cards > h{
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 100%;
+    color: rgb(0, 0, 0);
+}
+.flex-container{
+    margin-top: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+/* styling for the products */
+.best-sellers{
+    margin: 10px 0 100px 100px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    row-gap: 50px;
+    column-gap: 100px;
+}
+h1{
+    margin-bottom: 40px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: center;
+}
+.product{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 30%);
+    max-width: 250px;
+    /* margin: 20px 60px 30px 60px; */
+    background: rgb(255, 223, 228);
+}
+.product:hover{
+    transform: scale(1.2);
+    background: rgb(255, 180, 193);
+}
+.product > img{
+    width: 250px;
+}
+.product > h{
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 100%;
+    color: rgb(0, 0, 0);
+}
+
+/* styling for the icons in products */
+.product ion-icon {
+    color: rgb(245, 228, 0);
+}  
+.buy-btn{
+    padding: 3px 10px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+.buy-btn:hover{
+    background: rgb(230, 230, 176); 
+}
+
+.footer{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    border: solid;
+    border-width: 0.01rem 0 0 0;
+}
+.f-logo{
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 30px;
+}
+.footer>h{
+    font-weight: bold;
+    font-size: 1rem;
+}
+.footer ion-icon {
+    margin-top: 10px;
+    font-size: 30px;
+    color: rgb(250, 157, 172);
+}
+
+/* For the footer section */
+.footer-container{
+    background:linear-gradient(to right,rgb(255, 180, 193), rgb(255,234,234));
+    padding-bottom: 3rem;
+    
+}    
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.container-heading{
+    display: flex;
+    flex-direction: column;
+    margin-right: 6rem;
+}
+
+.container-heading h3{
+    padding-top: 15px;
+    padding-bottom:5px;
+    border-bottom: 2px solid red;
+    text-align: center;
+}
+.container-heading h3:hover{
+    border: none;
+}
+
+.container-heading a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    position: relative;
+}
+
+.container-heading a:hover{
+    text-decoration: underline;
+}
+
+.container-heading input{
+    width: 100%;
+    background: transparent;
+    color:rgb(241, 19, 19);
+    border:0;
+}
+.container-heading input:hover{
+    background:whitesmoke;
+    transition:1s;
+}
+form{
+    padding-bottom:15px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(228, 82, 82);
+    margin-bottom: 50px;
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+}
+
+button{
+    background: transparent;
+    cursor: pointer;
+}
+
+#logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid red;
+    margin: 20px auto;
+}
+.copyright{
+    text-align: center;
+    height: 90%;
+}
+
+#img{
+    height: 30px;
+    width: 50px;
+}
+
+.methods{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-logo{
+    position:relative;
+    right: 40px;
+}
+
+@media screen and (max-width: 1100px) {
+    .nested-grid-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .header{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .image-slide{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .images img{
+        width: 100%;
+    }
+    .best-sellers{
+        margin-left: 160px;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        row-gap: 70px;
+        column-gap: 200px;
+    }
+    .footer{
+        grid-column: 1/4;
+    }
+}
+@media screen and (max-width: 800px) {
+    .nav1 ul li{
+        margin-top: 10px;
+    }
+    .nav2{
+        margin-top: 55px;
+    }
+    .nav2 ul {
+        margin: 3px 0;
+    }
+    .nav2 ul li a{
+        padding: 0 10px;
+        font-size: 1.2rem;
+        color: black;
+    }
+    .icon{
+        margin-top: -40px;
+    }
+    .images img{
+        width: 200%;
+    } 
+    #img1:checked ~ .pic1 {
+        margin-left: 0px;
+    }
+    #img2:checked ~ .pic2 {
+        margin-left: -200%;
+    }
+    #img3:checked ~ .pic3 {
+        margin-left: -400%;
+    }
+    #img4:checked ~ .pic4 {
+        margin-left: -600%;
+    } */
+    .flex-container{
+        padding: 0 20px;
+    }
+    .best-sellers{
+        margin-left: 100px;
+        row-gap: 70px;
+        column-gap: 100px;
+    }
+}

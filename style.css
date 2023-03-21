@@ -1,0 +1,289 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* main logo styling */
+#logo-company{
+    height: 3.6rem;
+    width: 2.5rem;
+    position: relative;
+    left: 40px;
+}
+/* styling for the hamburger button */
+.main-box{
+    position: relative;
+    background: pink;
+    height:50px;
+    width: 0;
+}
+
+/* Styling for the nav bar2 */
+.nav2{
+        background-color: rgb(255, 221, 228);
+        border: 0.01rem solid;
+        border-color: rgb(150, 150, 150);
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+}
+.nav2 ul{
+        text-align: center;
+        list-style: none;
+}
+.nav2 ul li a{
+        padding: 0 30px;
+        font-size: 1.2rem;
+        color: black;
+}
+.nav2 ul li{
+        display: inline-block;
+        padding: 10px 0px;
+        color: black;
+}
+.nav2 a:hover{
+        color: rgb(190, 105, 117);
+        transition: 0.3s;
+}
+
+/* styling for the hamburger */
+#menu{
+    font-size: 2rem;
+    color: red;
+}
+
+/* Side bar styling */
+.sidebar-menu{
+    position: absolute;
+    height: 170vh;
+    width: 280px;
+    left: -280px;
+    background: lightcoral;
+    box-shadow:  0 0 6px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+.sidebar-menu .logo{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-shadow:0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-menu .logo a{
+    color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: 400;
+    position: absolute;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+}
+.sidebar-menu .menu{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+
+.sidebar-menu .menu li{
+    margin-top:5px;
+    padding: 1rem 1.2rem;
+}
+.sidebar-menu .menu li:hover{
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-menu .menu ion-icon{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.sidebar-menu .menu a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+#checkbox{
+    display: none;
+}
+
+.main-box .btn1 ion-icon{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    position: absolute;
+    z-index: 1;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+.main-box btn1 ion-icon:hover{
+    font: 2rem;
+}
+
+
+.sidebar-menu .btn2 ion-icon{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 15rem;
+    top: 1rem;
+    opacity: 0;
+    transition: all 0.4s linear;
+}
+#checkbox:checked ~.sidebar-menu{
+    left: 0;
+}
+
+#checkbox:checked ~.btn1 ion-icon{
+    opacity: 0;
+}
+
+#checkbox:checked ~.sidebar-menu .btn2 ion-icon{
+    opacity: 1;
+}
+
+/* discount ribbon styling */
+.discount-ribbon{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    overflow: hidden;
+    z-index: 2;
+}
+.discount-ribbon::before{
+    content: "20%";
+    position: absolute;
+    width: 150%;
+    height: 45px;
+    background:red;
+    transform: rotate(-45deg) translateY(-35px) translateX(-35px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(236, 234, 234);
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 5px 10px rgba(20, 20, 20, 0.1);
+}
+
+/* product hover styles */
+.product:hover{
+    transform: scale(1.2);
+    background: rgb(255, 180, 193);
+}
+/* rating star color design */
+.star ion-icon {
+    color: rgb(255, 238, 0);
+}
+
+/* footer designs */
+
+.footer-container{
+    background:linear-gradient(to right,rgb(255, 180, 193), rgb(255,234,234));
+    padding-bottom: 3rem;
+    
+}    
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+/* footer container heading */
+.container-heading{
+    display: flex;
+    flex-direction: column;
+    margin-right: 6rem;
+}
+
+.container-heading h3{
+    padding-top: 15px;
+    padding-bottom:5px;
+    border-bottom: 2px solid red;
+    text-align: center;
+}
+.container-heading h3:hover{
+    border: none;
+}
+
+.container-heading a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    position: relative;
+}
+
+.container-heading a:hover{
+    text-decoration: underline;
+}
+
+.container-heading input{
+    width: 100%;
+    background: transparent;
+    color:rgb(241, 19, 19);
+    border:0;
+}
+.container-heading input:hover{
+    background:whitesmoke;
+    transition:1s;
+}
+/* footer form */
+form{
+    padding-bottom:15px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(228, 82, 82);
+    margin-bottom: 50px;
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+}
+
+button{
+    background: transparent;
+    cursor: pointer;
+}
+/* footer logo */
+#logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid red;
+    margin: 20px auto;
+}
+.copyright{
+    text-align: center;
+    height: 90%;
+}
+
+#img{
+    height: 30px;
+    width: 50px;
+}
+
+.methods{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-logo{
+    position:relative;
+    right: 40px;
+}
+
+
